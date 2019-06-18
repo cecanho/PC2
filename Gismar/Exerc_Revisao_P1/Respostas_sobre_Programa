@@ -1,1 +1,50 @@
  
+Respostas
+
+1 - Ele imprimiu:
+/*
+    Vazia
+    Primeiro ID: 1
+    Primeira Idade: 19
+    Oops, temos alguém na lista.
+
+    Primeira Idade: 2
+    Primeiro ID: 19
+    Ultima Idade: 3
+    Ultimo ID: 30
+*/
+
+2 - No meu caso:
+    ele imprimiu o id 1, mas somente após imprimir "Vazia", que é a saída de acordo com a condição de chamada da função "verifica()".
+
+3 - Segue abaixo:
+    insereNaPrimeiraPosicao(): basicamente, após a verificar para onde ponteiro "primeiro" está apontando, caso esteja apontando para NULL, indica que a lista está vazia, e assim, a primeira posição, é a única (insere id=1, idade = 19). Caso contrário, passa apontar para o primeiro, e primeiro para próxima, criando uma espécie de "deslocamento", reencadeando a lista, fazendo a inserção ser a primeira posição (incrementa o id, idade = 19).
+    
+    insereNoFinal(): faz a mesma verificação inicial (se primeiro aponta para NULL), e conforme retorno da condicional, caso ela esteja vazia, insere no ínício (id=3, idade=30), caso contrário, insere na última posição (id=3, idade = 30), e reordena apontamento do ponteiro prox para novo, e ultimo para novo.
+    
+    removeNoInicio: aqui, primeiro verifica-se se a lista está vazia (não se pode remover algo do vazio), depois, caso contrário, veririfica-se para onde aponta o ponteiro primeiro->prox, caso esteja para NULL, sabemos que a lista tem um único item, então apagamos o mesmo (aqui, usando um aux "temp", para manobrar a realocação do ponteiro). Caso contrário, apenas, realocamos o primeiro para receber a posição do segundo, e eliminamos o primeiro (o que fica na temp).
+    
+    removeNoFinal(): aqui, o grande cuidado é para como fazer o deslocamento da última posição para penúltima (removendo o último elemento). As validações, assim como nas demais, ocorrem, para verificar posições, lista vazia ou não, mas aqui, utilizamos um laço de repetição para percorrer toda a lista, onde é usado dois auxiliares (temp e temp1), que justamente um armazena o final da lista, e o outr é o penultimo. Quando se é conhecido o final, atribuímos o temp1 ao último, mostarando que esta é o novo final, e limpamo o final, fazendo assim a remoção do final.
+    
+    verifica(): apenas verifica se a lista está ou não vazia.
+
+4 - Segue:
+    A função malloc() (memory allocation), tem a função de armazenar um determinado espaço de memória (armazenamento de acordo com o tamnho da estrutura), que será reservado e direcionado préviamente. Este espaço fica alocado, e só é finalizado, quando usamo a função free().
+    
+5 - A rotina:
+    /*
+    1 - Veirifica se vazia: 
+    2 - Imprme: Vazia
+    3 - Insere no início: id = 1, idade = 19
+    4 - Insere no início: id = 2, idade = 19 // id = 2, pois id++ (1 + 1)
+    5 - Imprime: Primeiro ID: 1
+                 Primeira Idade: 19
+    6 - Verifica se vazia: 
+    7 - Imprme: Oops, temos alguém na lista.
+    8 - Remove do início : id = 1, idade = 19
+    9 - Insere no final: id = 3, idade = 30
+    10 - Imprime: Primeira Idade: 2 //
+                  Primeiro ID: 19   //
+                  Ultima Idade: 3   // imprime os dados de id e idade invertidos iniciais e finais
+                  Ultimo ID: 30
+*/
