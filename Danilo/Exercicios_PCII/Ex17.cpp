@@ -13,7 +13,7 @@ void notasAluno(){
 	cout << "Entre com a terceira nota do aluno: ";
 	cin >> notas[2];
 	
-	cout "Notas do aluno: ";
+	cout << "Notas do aluno: ";
 	for (int i = 0; i < 3; i++)
 		cout << notas[i] << "  ";
 }
