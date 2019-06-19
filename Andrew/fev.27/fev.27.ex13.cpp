@@ -18,17 +18,23 @@ int main(){
         chars++;
         if (isalpha(c)){
             alfab++;
-        }else if (islower(c)){
+        }
+		if (islower(c)){
             minusc++;
-        }else if (isupper(c)){
+        }
+		if (isupper(c)){
             maiusc++;
-        }else if (isdigit(c)){
+        }
+		if (isdigit(c)){
             num++;
-        }else if (isspace(c)){
+        }
+		if (isspace(c)){
             espacos++;
-        }else if (ispunct(c)){
+        }
+		if (ispunct(c)){
             pontua++;
-        }else{
+        }
+		if (!isalpha(c)){
             outros++;
         };
    };
