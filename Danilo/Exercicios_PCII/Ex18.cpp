@@ -8,7 +8,7 @@ using namespace std;
 struct Agenda{
 	string nome;
 	string endereco;
-	string telefone;
+	long int telefone;
 	long int CEP;
 };
 
@@ -22,9 +22,10 @@ void InserirRegistro(){
 	getline(cin, a.nome);
 	cout << "Entre com o endereço da pessoa" << endl;
 	getline(cin, a.endereco);
-	cout << "Entre com o telefone da pessoa" << endl;
-	getline(cin, a.telefone);
-	cout << "Informe o CEP" << endl;
+	cout << "Entre com o telefone da pessoa (somente os números)" << endl;
+	cin >> a.telefone;
+	cin.ignore();
+	cout << "Informe o CEP (somente os números)" << endl;
     cin >> a.CEP;
     
 	try{
