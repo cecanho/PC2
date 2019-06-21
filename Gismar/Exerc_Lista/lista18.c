@@ -182,7 +182,6 @@ void select_by_first_letter() {
     if ((first_letter_found(searched_letter)) == 1)
       printf("\n\tRegistro(s) Nao Encontrado(s): \n\n");
   }
-
 }
 
 void clean_data() {
